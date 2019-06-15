@@ -191,6 +191,24 @@ export const asyncRoutes = [
   tableRouter,
 
   {
+    path: '/sportsman',
+    component: Layout,
+    redirect: 'noRedirect',
+    name: 'sportsman',
+    meta: {
+      title: '运动员管理',
+      icon: 'peoples'
+    },
+    children: [
+      {
+        path: 'init-sportsman',
+        component: () => import('@/views/sports-man/init'),
+        name: 'sportsman',
+        meta: { title: '初始化' }
+      }
+    ]
+  },
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/list',
